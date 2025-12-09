@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENTS FORM</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+            display: inline-block;
+            margin-left: 40%;
+            border-radius: 10%;
+            text-shadow: 2px 2px 5px gray;
+            padding-top: 2%;
+        }
+
+        .table1 {
+            padding: 3px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12%;
+            width: 35%;
+            margin-top: 3%;
+            border: solid 3px black;
+        }
+
+        .table1 td {
+            padding: 10px;
+        }
+
+
+        .table2 {
+            margin-left: 5%;
+            border: solid 2px black;
+            width: 50%;
+            margin-top: 2%;
+
+        }
+
+        .table2 td {
+            padding: 10px;
+        }
+
+        #savebutton {
+            background-color: black;
+            color: white;
+            text-align: center;
+            align-items: center;
+            padding-left: 47%;
+            padding-right: 45%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            border-radius: 10px;
+            ;
+        }
+
+        .deletebutton {
+            background-color: red;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+            background-color: transparent;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            position: absolute;
+        }
+
+        @media screen and (max-width:600px) {
+
+            h1 {
+                margin-left: 10%;
+            }
+
+            .table1 {
+                margin-left: 11%;
+                margin-top: 2%;
+                width: 80%;
+            }
+
+            .table2 {
+                font-size:1%;
+                color: white;
+                width: 45%;
+                margin-right: 6%;
+                
+
+            }
+
+            .table2 th{
+                width: 5%;
+            }
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                position: absolute;
+                opacity: 1;
+
+            }
+
+        }
+    </style>
+
+    <div class="bgimage">
+        <img src="./bgimage8.png">
+    </div>
+
+    <h1 class="header">STUDENT FORM</h1>
+
+    <table class="table1" border="0">
+        <tr>
+            <th style="color:#511203;">Name :</th>
+            <td><input id="sname" placeholder="Enter your name"
+                    style="border: none; background: transparent; width: 100%; border-bottom: solid 1px black;"></td>
+        </tr>
+
+        <tr>
+            <th style="color:#511203;">Age :</th>
+            <td><input type="number" id="sage" placeholder="Enter your age"
+                    style="border: none; background: transparent; width: 100%; border-bottom: solid 1px black;"></td>
+        </tr>
+
+        <tr>
+            <th style="color:#511203;">Gender :</th>
+            <td id="radiobutton">
+                <label>
+                    <input type="radio" id="option1" name="Gender" value="Male">
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" id="option2" name="Gender" value="Female">
+                    Female
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th style="color:#511203;">Course :</th>
+            <td style="align-items: center; justify-content: center; background-color: transparent;">
+                <select id="scourse"
+                    style="border: none; background-color: transparent; width: 100%; border-bottom: solid 1px black;">
+                    <option value="" style="background-color: transparent;">-Select Course-</option>
+                    <option value="Java script" style="background-color: transparent;">HTML</option>
+                    <option value="Python" style="background-color: transparent;">CSS</option>
+                    <option value="C++" style="background-color: transparent;">Java Script</option>
+                    <option value="Java" style="background-color: transparent;">React JS</option>
+                    <option value="C++" style="background-color: transparent;">Express JS</option>
+                    <option value="C++" style="background-color: transparent;">Node JS</option>
+                    <option value="C++" style="background-color: transparent;">MongoDB</option>
+
+
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <th style="color:#511203;">E-mail :</th>
+            <td><input id="semail" placeholder="Enter your E-mail address"
+                    style="border: none; background: transparent; width: 100%; border-bottom: solid 1px black;"></td>
+        </tr>
+
+        <tr>
+            <td id="savebuttontd" colspan="2">
+                <button id="savebutton">Save</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+
+    <table class="table2" border="1">
+        <tr class="table2__update" style="color:#511203; background-color:#B66F07;">
+            <th id="x__name" style="width: 5%;">Name</th>
+            <th id="x__age" style="width: 1%;">Age</th>
+            <th id="x__course" style="width: 2%;">Course</th>
+            <th id="x__gender" style="width: 2%;">Gender</th>
+            <th id="x__email" style="width: 5%;">E-mail</th>
+            <th id="x__action" style="width: 2%;">Action</th>
+        </tr>
+        <tr class="newtable" style="border-bottom: solid 1px black;">
+            <td>Kiboxson</td>
+            <td>21</td>
+            <td>Python</td>
+            <td>Male</td>
+            <td>kiboxsonleena51@gmail.com</td>
+            <td><button class="deletebutton" onclick="this.parentElement.parentElement.remove()">Delete</button></td>
+
+        </tr>
+    </table>
+
+    <script>
+        var name = document.getElementById("sname")
+        var age = document.getElementById("sage")
+        var course = document.getElementById("scourse")
+        var email = document.getElementById("semail")
+        var savebutton = document.getElementById("savebutton")
+
+
+
+        savebutton.addEventListener("click", function () {
+
+            var genderValue = document.querySelector('input[name="Gender"]:checked')
+
+            if (sname.value === "") {
+                alert("Please enter your name.")
+                return
+            }
+
+            if (sage.value === "") {
+                alert("Please enter your age.")
+                return;
+            }
+
+            if (scourse.value === "") {
+                alert("Please select a course.")
+                return
+            }
+
+            if (!genderValue) {
+                alert("Please select a gender.")
+                return
+            }
+
+            if (semail.value === "") {
+                alert("Please enter your email.")
+                return
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(semail.value)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+
+            var newrow = document.createElement("tr")
+
+
+            var tdname = document.createElement("td")
+            tdname.textContent = sname.value
+            newrow.appendChild(tdname)
+
+
+            var tdage = document.createElement("td")
+            tdage.textContent = sage.value
+            newrow.appendChild(tdage)
+
+            var tdcourse = document.createElement("td")
+            tdcourse.textContent = scourse.value
+            newrow.appendChild(tdcourse)
+
+            var tdgender = document.createElement("td")
+            tdgender.textContent = genderValue.value
+            newrow.appendChild(tdgender)
+
+            var tdemail = document.createElement("td")
+            tdemail.textContent = semail.value
+            newrow.appendChild(tdemail)
+
+            var tdaction = document.createElement("td")
+            tdaction.innerHTML = `<button class="deletebutton" onclick="this.parentElement.parentElement.remove()">Delete</button>`
+            newrow.appendChild(tdaction)
+
+
+
+            document.querySelector(".table2").appendChild(newrow)
+        })
+
+    </script>
+
+</body>
+
+</html>
