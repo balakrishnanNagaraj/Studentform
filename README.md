@@ -1,5 +1,4 @@
 # STUDENT-FORM
-EMC 4th project
 
 This project is a web-based student registration form built using HTML, CSS, and JavaScript. It allows users to input student details such as name, age, gender, course, and email. Submitted entries are dynamically added to a table below the form, displaying all registered students in a structured format.
 
